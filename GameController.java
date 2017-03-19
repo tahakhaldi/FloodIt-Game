@@ -1,8 +1,3 @@
-// Author: Taha Khaldi 
-// Student numbers: 8667551 
-// Course: ITI 1121-D
-// Assignment: 3
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -11,15 +6,6 @@ import java.util.Arrays;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-
-/**
- * The class <b>GameController</b> is the controller of the game. It has a method
- * <b>selectColor</b> which is called by the view when the player selects the next
- * color. It then computesthe next step of the game, and  updates model and view.
- *
- * @author Guy-Vincent Jourdan, University of Ottawa
- */
-
 
 public class GameController implements ActionListener {
 
@@ -32,14 +18,6 @@ public class GameController implements ActionListener {
 	private final int [] col_neighbors = { -1, 0, 1, 0 };
 	private final Object[] options = { "Quit", "Play Again" };
 
-
-	/**
-	 * Constructor used for initializing the controller. It creates the game's view 
-	 * and the game's model instances
-	 * 
-	 * @param size
-	 *            the size of the board on which the game will be played
-	 */
 	public GameController(int size) {
 
 		model = new GameModel(size);
@@ -50,10 +28,7 @@ public class GameController implements ActionListener {
 		
 
 	}
-
-	/**
-	 * resets the game
-	 */
+	
 	public void reset(){
 
 		first = true;
@@ -61,14 +36,6 @@ public class GameController implements ActionListener {
 		selectColor(model.getColor(0, 0));
 
 	}
-
-	/**
-	 * Callback used when the user clicks a button (reset or quit)
-	 *
-	 * @param e
-	 *            the ActionEvent
-	 */
-
 	public void actionPerformed(ActionEvent e) {
 
 		String command = e.getActionCommand();
@@ -87,16 +54,7 @@ public class GameController implements ActionListener {
 		}
 
 	}
-
-	/**
-	 * <b>selectColor</b> is the method called when the user selects a new color.
-	 * If that color is not the currently selected one, then it applies the logic
-	 * of the game to capture possible locations. It then checks if the game
-	 * is finished, and if so, congratulates the player, showing the number of
-	 * moves, and gives two options: start a new game, or exit
-	 * @param color
-	 *            the newly selected color
-	 */
+	
 	public void selectColor(int color){
 
 		model.setCurrentSelectedColor(color);
@@ -161,11 +119,11 @@ public class GameController implements ActionListener {
 					{
 						model.capture(nRow, nCol);
 						stack.push(diNeighbor);
-					} // End If
+					} 
 				}
 
-			} // End For
-		} // End While
+			} /
+		} 
 	}
 
 
