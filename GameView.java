@@ -1,8 +1,3 @@
-// Author: Taha Khaldi 
-// Student numbers: 8667551 
-// Course: ITI 1121-D
-// Assignment: 3
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -17,35 +12,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-// ADD YOUR IMPORTS HERE
-
-/**
- * The class <b>GameView</b> provides the current view of the entire Game. It extends
- * <b>JFrame</b> and lays out the actual game and 
- * two instances of JButton. The action listener for the buttons is the controller.
- *
- * @author Guy-Vincent Jourdan, University of Ottawa
- */
-
 public class GameView extends JFrame {
-
-// ADD YOUR INSTANCE VARIABLES HERE
 	
 	private JLabel jlNumSteps;
 	
 	private GameModel model;
 	
 	private List<DotButton> buttonList = new ArrayList<>();
-	
-
-    /**
-     * Constructor used for initializing the Frame
-     * 
-     * @param model
-     *            the model of the game (already initialized)
-     * @param gameController
-     *            the controller
-     */
 
     public GameView(GameModel model, GameController gameController) {
 
@@ -122,10 +95,6 @@ public class GameView extends JFrame {
     	setVisible (true);
 
     }
-
-    /**
-     * update the status of the board's DotButton instances based on the current game model
-     */
 
     public void update(){
 
